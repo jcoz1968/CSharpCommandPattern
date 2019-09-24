@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace ShoppingCart.Business.Commands
 {
@@ -13,6 +14,7 @@ namespace ShoppingCart.Business.Commands
             if (command.CanExecute())
             {
                 commands.Push(command);
+                Thread.Sleep(100);
                 command.Execute();
             }
         }
